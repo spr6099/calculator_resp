@@ -1,5 +1,5 @@
 .calculator {
-  width: 100%;
+  width: 400px;
   background-color: black;
   margin: 0 auto;
   min-height: 100vh;
@@ -12,6 +12,7 @@
 }
 
 .display {
+  min-height: 120px;
   overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap; /* Prevent wrapping */
   word-wrap: normal; /* Avoid breaking words */
@@ -34,6 +35,29 @@
 .button {
   aspect-ratio: 1; /* Ensure height and width are equal */
   border-radius: 50%; /* Ensure perfect circle buttons */
+  border: none;
+  font-size: clamp(20px, 4vw, 28px); /* Adjust font size responsively */
+  font-weight: 500;
+  /* cursor: pointer; */
+  /* transition: filter 0.2s; */
+  /* padding: 0; */
+}
+
+.button.gray {
+  background-color: #a5a5a5;
+  color: black;
+}
+.button.orrange {
+  background-color: #ff9f0a;
+  color: white;
+}
+.button.dark {
+  background-color: #333333;
+  color: white;
+}
+
+.button:active {
+  filter: brightness(150%);
 }
 
 .button.span-2 {
@@ -41,9 +65,18 @@
   aspect-ratio: auto;
   border-radius: 35px;
 }
-/* from 480px screen to large screen */
-@media (min-width: 480px) {
+
+/* from 0px screen to 502 px screen */
+@media (max-width: 502px) {
   .calculator {
-    width: 400px;
+    width: 85%;
   }
+  .buttons{
+    gap:10px; /* Reduce spacing on smaller screens */
+  }
+ *{
+  background-color: black;
+ }
+  
 }
+
